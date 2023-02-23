@@ -1,0 +1,75 @@
+
+<div class="mb-3 row" *ngIf="rest.id != 0">
+    <label for="staticUser" class="col-sm-2 col-form-label">Id</label>
+    <div class="col-sm-10">
+        <input class="form-control" type="text" [(ngModel)]="restView.id"  aria-label="default input example" disabled>
+  </div> 
+</div> 
+<div class="mb-3 row">
+  <label for="staticUser" class="col-sm-2 col-form-label">שם</label>
+  <div class="col-sm-10">
+      <input class="form-control" type="text" [(ngModel)]="restView.name"  aria-label="default input example">
+</div> 
+</div> 
+<div class="mb-3 row">
+  <label for="staticUser" class="col-sm-2 col-form-label">שם נוסף</label>
+  <div class="col-sm-10">
+      <input class="form-control" type="text" [(ngModel)]="restView.additionalName"  aria-label="default input example">
+</div> 
+</div> 
+<div class="mb-3 row">
+  <label for="staticUser" class="col-sm-2 col-form-label">תיאור</label>
+  <div class="col-sm-10">
+      <input class="form-control" type="text" [(ngModel)]="restView.description"  aria-label="default input example">
+</div> 
+</div> 
+<div class="mb-3 row">
+    <label for="staticUser" class="col-sm-2 col-form-label">מדינה</label>
+    <div class="col-sm-10">
+        <input class="form-control" type="text" [(ngModel)]="restView.country"  aria-label="default input example">
+  </div>
+</div>
+  <div class="mb-3 row">
+    <label for="staticUser" class="col-sm-2 col-form-label">עיר</label>
+    <div class="col-sm-10">
+        <input class="form-control" type="text" [(ngModel)]="restView.city"  aria-label="default input example">
+  </div>
+</div>
+  <div class="mb-3 row">
+    <label for="staticUser" class="col-sm-2 col-form-label">רחוב</label>
+    <div class="col-sm-10">
+        <input class="form-control" type="text" [(ngModel)]="restView.street"  aria-label="default input example">
+  </div>
+</div> 
+
+<div class="mb-3 row">
+    <label for="staticUser" class="col-sm-2 col-form-label">מס'</label>
+    <div class="col-sm-10">
+        <input class="form-control" type="text" [(ngModel)]="restView.houseNumber"  aria-label="default input example">
+  </div>
+</div>
+<div class="mb-3 row">
+  <label for="staticUser" class="col-sm-2 col-form-label">נייד</label>
+  <div class="col-sm-10">
+      <input class="form-control" type="text" [(ngModel)]="restView.phone"  aria-label="default input example">
+</div>
+</div>  
+<div class="mb-3 row">
+  <label for="staticUser" class="col-sm-2 col-form-label">אמייל</label>
+  <div class="col-sm-10">
+      <input class="form-control" type="text" [(ngModel)]="restView.email" aria-label="default input example">
+</div> 
+</div> 
+ 
+
+<div class="mb-3 row">
+  <label for="staticUser" class="col-sm-2 col-form-label">פעיל?</label>
+  <div class="col-sm-10">
+      <input class="form-check-input" type="checkbox" [(ngModel)]="restView.active"  aria-label="default input example">
+</div> 
+</div>
+
+  <div class="mb-3 row">
+  <button (click)="addRestaurant()" *ngIf="rest.id == 0" class="btn btn-primary">הוסף</button>
+  </div> 
+  <button (click)="editRestaurant()" *ngIf="rest.id != 0" class="btn btn-primary">ערוך</button>

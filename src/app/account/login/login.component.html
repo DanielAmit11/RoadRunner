@@ -1,0 +1,27 @@
+<form #login="ngForm" [formGroup]="loginForm" (ngSubmit)="onSubmit(login)">
+<div class="row ">
+    <div class="col-md-4 "></div>
+        <div class="col-md-4 text-center">
+            <h1 class="h3 mb-3 fw-normal">כניסה</h1>
+        
+            <div class="form-floating">
+              <input formControlName="email" [(ngModel)]="user.Email" class="form-control"  [ngClass]="{'is-invalid':submitted && f['email'].errors }">
+              <label for="floatingInput">אימייל</label>
+              <div class="text-danger"*ngIf="submitted && f['email'].errors "> 
+              <div *ngIf=" f['email'].getError('required') != null "> {{this.iTranslateIL.txtRequierd}}</div>
+              <div *ngIf=" f['email'].getError('email') != null "> {{this.iTranslateIL.txtEmail}}</div>
+            </div>
+            </div>
+            <div class="form-floating">
+              <input formControlName="password" [(ngModel)]="user.Password" type="assword" class="form-control" [ngClass]="{'is-invalid':submitted && f['password'].errors }" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">סיסמא</label>
+              <div class="text-danger" *ngIf=" submitted && f['password'].getError('required') != null "> {{this.iTranslateIL.txtRequierd}}</div>
+
+            </div>
+            <p class="text-danger">{{message}}</p>
+        
+           
+            <button class="w-100 btn btn-lg btn-primary" (click)="Login()" >התחבר</button>
+    </div>
+</div>
+</form>

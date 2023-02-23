@@ -1,0 +1,106 @@
+
+<div class="row">
+
+<div class="col-md-6">
+    <div class="mb-3 row" *ngIf="orderView.id != 0">
+        <label for="staticUser" class="col-sm-2 col-form-label">Id</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" [(ngModel)]="orderView.id"  aria-label="default input example" disabled>
+      </div> 
+    </div> 
+    <div class="mb-3 row">
+      <label for="staticUser" class="col-sm-2 col-form-label">שם לקוח</label>
+      <div class="col-sm-10">
+          <input class="form-control" type="text" [(ngModel)]="orderView.name"  aria-label="default input example" >
+          <small *ngIf="submitted && !this.validName" class="text-danger"> {{this.iTranslateIL.txtRequierd}}</small>
+    </div> 
+    </div> 
+ 
+    <div class="mb-3 row" >
+      <label for="staticUser" class="col-sm-2 col-form-label">מסעדה ID</label>
+      <div class="col-sm-10">
+          <input [readonly]="isRestaurantType" class="form-control" type="text" [(ngModel)]="orderView.restaurantId"  aria-label="default input example" >
+    </div> 
+    </div> 
+    <div class="mb-3 row">
+        <label for="staticUser" class="col-sm-2 col-form-label">תיאור</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" [(ngModel)]="orderView.description"  aria-label="default input example">
+      </div>
+    </div>
+      <div class="mb-3 row">
+        <label for="staticUser" class="col-sm-2 col-form-label">נייד</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" [(ngModel)]="orderView.phone"  aria-label="default input example">
+            <small *ngIf="submitted && !this.validPhone" class="text-danger"> {{this.iTranslateIL.txtRequierd}}</small>
+      </div>
+    </div>
+      <div class="mb-3 row">
+        <label for="staticUser" class="col-sm-2 col-form-label">הערות</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" [(ngModel)]="orderView.remark"  aria-label="default input example">
+      </div>
+    </div> 
+    <div class="mb-3 row">
+        <label for="staticUser" class="col-sm-2 col-form-label">מחיר</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" [(ngModel)]="orderView.price"  aria-label="default input example">
+      </div>
+    </div> 
+    <div class="mb-3 row">
+      <label for="staticUser" class="col-sm-2 col-form-label">שולם</label>
+      <div class="col-sm-10">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="orderView.paid"  aria-label="default input example">
+    </div> 
+    </div>
+</div>
+<div class="col-md-6">
+   
+    <div class="mb-3 row">
+      <label for="staticUser" class="col-sm-2 col-form-label">עיר</label>
+      <div class="col-sm-10">
+          <input class="form-control" type="text" [(ngModel)]="orderView.city" aria-label="default input example">
+    </div> 
+    </div> 
+    <div class="mb-3 row">
+        <label for="staticUser" class="col-sm-2 col-form-label">רחוב</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" [(ngModel)]="orderView.street" aria-label="default input example">
+            <small *ngIf="submitted && !this.validStreet" class="text-danger"> {{this.iTranslateIL.txtRequierd}}</small>
+
+      </div> 
+      </div>
+      <div class="mb-3 row">
+        <label for="staticUser" class="col-sm-2 col-form-label">מס' בית</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" [(ngModel)]="orderView.houseNumber" aria-label="default input example">
+            <small *ngIf="submitted && !this.validHouseNumber" class="text-danger"> {{this.iTranslateIL.txtRequierd}}</small>
+
+      </div> 
+      </div>
+      <div class="mb-3 row">
+        <label for="staticUser" class="col-sm-2 col-form-label">קומה</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" [(ngModel)]="orderView.floor" aria-label="default input example">
+      </div> 
+      </div>
+      <div class="mb-3 row">
+        <label for="staticUser" class="col-sm-2 col-form-label">דירה</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" [(ngModel)]="orderView.apartment" aria-label="default input example">
+      </div> 
+      </div>
+     
+     
+    
+
+</div>
+
+</div>
+
+
+
+  <div class="mb-3 row">
+  <button (click)="addRestaurant()" *ngIf="orderView.id == 0" class="btn btn-primary">הוסף</button>
+  </div> 
+  <button (click)="editRestaurant()" *ngIf="orderView.id != 0" class="btn btn-primary">ערוך</button>
